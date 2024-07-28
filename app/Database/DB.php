@@ -22,7 +22,6 @@ class DB{
     }
 
     /**
-     * 
      * @param string $name
      */
     public static function table(string $name)
@@ -31,7 +30,6 @@ class DB{
     }
 
     /**
-     * 
      * @param string $sql
      * @param array|object $data
      */
@@ -42,6 +40,10 @@ class DB{
         return $smtp;
     }
 
+
+    /**
+    * @param string $sql
+    */
     public function query_with_vulnerability($sql)
     {
         try{
