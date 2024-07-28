@@ -1,0 +1,9 @@
+{
+    "name": "ivan/php_rest_v1",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
