@@ -6,7 +6,6 @@ class Page
 {
     public static function render(string $name, string $message = "")
     {
-        $_SESSION["prev_page"] = $_SERVER['REQUEST_URI'];
         require_once "views/pages/". $name . ".php";
         die();
     }
@@ -15,7 +14,4 @@ class Page
         self::render("errors/" . $code_error, $message);
     }
 
-    public static function page_prev(){
-        header("Location: ".$_SESSION["prev_page"]);
-    }
 }
