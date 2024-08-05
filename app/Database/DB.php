@@ -4,6 +4,7 @@ namespace App\Database;
 
 use App\Helpers\Traits\SingletonTrait;
 use App\Database\DBquery;
+use App\Database\Migration;
 use PDO;
 use PDOException;
 
@@ -15,9 +16,11 @@ class DB{
     public function connect()
     {
         try{
-            $this->conn = new PDO("mysql:host=127.0.0.1;port=3306;dbname=php_task_1", "root", "root");
+            $this->conn = new PDO("mysql:host=mysql;port=3306;dbname=php_task_1", "user", "password");
         } catch(PDOException $e){
-            echo $e->getMessage();
+            echo "<pre>";
+            print_r($e);
+            echo "</pre>";
         }
     }
 
@@ -55,6 +58,11 @@ class DB{
                 "error" => $e->getMessage()
             ];
         }
+    }
+
+    public function runMigrations()
+    {
+        Migration::run($this->conn);
     }
 
 }

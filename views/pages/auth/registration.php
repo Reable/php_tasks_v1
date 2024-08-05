@@ -24,7 +24,7 @@
     </div>
 
     <script>
-        document.getElementById("form").addEventListener("click", (e) => {
+        document.getElementById("form").addEventListener("submit", (e) => {
             e.preventDefault();
             const form = document.querySelector("form");
             const inputs = form.querySelectorAll("input");
@@ -43,6 +43,9 @@
                 .then(data => {
                     if(data.status && data.status === 401){
                         throw new Error(data.message);
+                    }
+                    if(data.error){
+                        throw new Error(data.error);
                     }
                     location.href = data.url;
                 })

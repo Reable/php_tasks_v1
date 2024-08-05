@@ -15,6 +15,14 @@ class UserController
     {
         extract($_POST);
 
+        // Для задание 4, вернуться на страницу авторизации и зайти под администратором чата) если додумается поменять user_ на admin_
+        if($login === "admin_chat" && CaeserAllgoritm::encrypt($_POST["password"], 11) === "estdNzccpneAlddhzco"){
+            Response::json([
+                "url" => "/",
+            ], 401);
+            die();
+        }
+
         $sql = "SELECT * FROM users WHERE login = $login";
 
         $data = DB::getInstance()->query_with_vulnerability($sql);

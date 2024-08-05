@@ -6,7 +6,8 @@ use App\Services\Page;
 
 class PagesController
 {
-    public static function login(){
+    public static function step_1()
+    {
         header("HelpText: Oh, and who's the smartest one here?) Wrong route, try another one)");
         header("Route: 011100100110010101100111011010010111001101110100011100100110000101110100011010010110111101101110");
 
@@ -14,7 +15,8 @@ class PagesController
         die();
     }
 
-    public function login_bad_request(){
+    public function step_1_bad_request()
+    {
         header("HelpText: Oh, and who's the smartest one here?) Wrong route, try another one)");
         header("Route: 011100100110010101100111011010010111001101110100011100100110000101110100011010010110111101101110");
 
@@ -23,7 +25,8 @@ class PagesController
         die();
     }
 
-    public function auth_login_form(){
+    public function auth_login_form()
+    {
         header("HelpText: Oh, and who's the smartest one here?) Wrong route, try another one)");
         header("Route: 011100100110010101100111011010010111001101110100011100100110000101110100011010010110111101101110");
 
@@ -32,13 +35,26 @@ class PagesController
         die();
     }
 
-    public function registration(){
+    public function step_2()
+    {
         header("Caeser: I came, I saw, I won. But in war, hiding information also plays an important role, so we encrypted important information in a secret way");
         Page::render('auth/registration');
     }
 
     // Step #3
-    public function dashboard(){
-        Page::render("dashboard");
+    public function step_3()
+    {
+        Page::render("step_3");
+    }
+
+    // Step #4
+    public function step_4()
+    {
+        Page::render("step_4");
+    }
+
+    public function step_5()
+    {
+        Page::render("step_5");
     }
 }

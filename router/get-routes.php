@@ -4,16 +4,28 @@ use App\Services\Router;
 use App\Controllers\PagesController;
 
 // Step #1
-Router::get("/", [PagesController::class, "login"]);
-Router::get("/registration", [PagesController::class, "login_bad_request"]);
+Router::get("/", [PagesController::class, "step_1"]);
+Router::get("/registration", [PagesController::class, "step_1_bad_request"]);
 
 // Step #2
 Router::get(
     "/01110010 01100101 01100111 01101001 01110011 01110100 01110010 01100001 01110100 01101001 01101111 01101110",
-    [PagesController::class, "registration"]
+    [PagesController::class, "step_2"]
+);
+
+// Step #3
+Router::get(
+    "/neqrgkgvh_psj_khasr_ewib",
+    [PagesController::class, "step_3"]
+);
+
+// Step #4
+Router::get(
+    "/010011000110010101110100001001110111001100100000011100110111010001100001011100100111010000100000011101000110100001100101001000000111100001110011011100110010000001100001011101000111010001100001011000110110101100111111",
+    [PagesController::class, "step_4"]
 );
 
 Router::get(
-    "/neqrgkgvh_psj_khasr_ewib",
-    [PagesController::class, "dashboard"]
+    "/01001000011000010110001101101011011010010110111001100111001000000110000100100000011001000110000101110100011000010110001001100001011100110110010100100000011101110110100101110100011010000010000001101001011011100110101001100101011000110111010001101001011011110110111001110011",
+    [PagesController::class, "step_5"]
 );
