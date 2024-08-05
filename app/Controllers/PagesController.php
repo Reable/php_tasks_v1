@@ -47,12 +47,13 @@ class PagesController
         Page::render("step_3");
     }
 
-    // Step #4
+    // Step #4 XSS атака     !!!придумать задание
     public function step_4()
     {
         Page::render("step_4");
     }
 
+    // Step #5 SQL иньекция  !!!придумать задание
     public function step_5()
     {
         Page::render("step_5");
